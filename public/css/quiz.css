@@ -1,0 +1,59 @@
+.quiz-intro {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.quiz-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.word-maps,
+.item-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.word-map__options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.axis-section__header h3 {
+  margin: 0;
+}
+
+.likert-field {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.likert-field p {
+  margin-bottom: 0.75rem;
+}
+
+.likert-scale {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+.likert-scale label {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.likert-scale input {
+  accent-color: var(--brand);
+}
+
+.success-panel {
+  text-align: center;
+  margin-top: 2rem;
+}

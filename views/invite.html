@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Share your invite</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="/">The Unfakeable Personality Test</a>
+      </div>
+    </header>
+
+    <main class="container" id="invite-app">
+      <section class="card">
+        <p class="eyebrow">Invite friends & family</p>
+        <h1>Share your link</h1>
+        <p id="invite-caption">Copy and send this link to the people who know you best.</p>
+
+        <div class="invite-code-block">
+          <p class="eyebrow">Your invite code</p>
+          <div class="code-display" id="invite-code">???????</div>
+          <p class="muted small-text">Friends can enter this code on the homepage if they misplace the link.</p>
+        </div>
+
+        <div class="invite-link">
+          <input type="text" id="invite-link" readonly />
+          <button class="btn secondary" id="copy-link">Copy link</button>
+          <button class="btn ghost" id="share-link">Share</button>
+        </div>
+        <p id="copy-feedback" class="form-message" role="status"></p>
+      </section>
+
+      <section class="card progress-card">
+        <h2>Responses</h2>
+        <p>
+          <span id="progress-count">0</span> / <span id="progress-target">5</span>
+          responses
+        </p>
+        <div class="progress">
+          <div id="progress-fill"></div>
+        </div>
+        <p id="progress-hint" class="muted"></p>
+        <div class="form-actions">
+          <a class="btn primary" id="results-btn" href="#">Check my results</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> The Unfakeable Personality Test.</small>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/share.js" defer></script>
+  </body>
+</html>

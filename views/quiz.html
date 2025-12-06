@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Unfakeable Personality Test Quiz</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/quiz.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="/">The Unfakeable Personality Test</a>
+      </div>
+    </header>
+    <main class="container" id="quiz-app">
+      <section class="quiz-intro">
+        <p id="quiz-mode" class="eyebrow">Loading...</p>
+        <h1 id="quiz-heading">Loading quiz…</h1>
+        <p id="quiz-subtitle">Please wait while we prepare your experience.</p>
+      </section>
+
+      <form id="quiz-form" class="quiz-form" novalidate>
+        <div id="name-field" class="form-group hidden">
+          <label for="displayName">What should we call you?</label>
+          <input type="text" id="displayName" name="displayName" maxlength="60" placeholder="e.g., Alex" required />
+        </div>
+
+        <div id="word-maps" class="word-maps"></div>
+        <div id="items" class="item-sections"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary" id="submit-btn">Submit quiz</button>
+          <p id="form-message" class="form-message" role="status"></p>
+        </div>
+      </form>
+
+      <section id="quiz-success" class="success-panel hidden">
+        <h2 id="success-title">Thanks!</h2>
+        <p id="success-body"></p>
+        <a class="btn primary" href="/quiz/self">Start my own quiz</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> The Unfakeable Personality Test.</small>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/quiz.js" defer></script>
+  </body>
+</html>

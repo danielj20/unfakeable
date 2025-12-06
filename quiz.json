@@ -1,0 +1,312 @@
+{
+  "quiz": {
+    "id": "perception_mirror_v1",
+    "name": "The Unfakeable Personality Test",
+    "description": "Compare how you see yourself with how the people closest to you see you.",
+    "scale": {
+      "id": "likert_5_agreement",
+      "labels": [
+        "Strongly Disagree",
+        "Disagree",
+        "Neutral",
+        "Agree",
+        "Strongly Agree"
+      ],
+      "values": [1, 2, 3, 4, 5]
+    },
+    "word_maps": [
+      {
+        "id": "energy_presence",
+        "title": "Energy & Presence",
+        "description_self": "How you come across in a room. Pick up to 2 words that feel most like you.",
+        "description_rater": "How they come across in a room. Pick up to 2 words that feel most like them.",
+        "max_choices": 2,
+        "options": [
+          { "id": "quiet", "label": "Quiet" },
+          { "id": "reserved", "label": "Reserved" },
+          { "id": "calm", "label": "Calm" },
+          { "id": "low_key", "label": "Low-key" },
+          { "id": "lively", "label": "Lively" },
+          { "id": "talkative", "label": "Talkative" },
+          { "id": "high_energy", "label": "High-energy" },
+          { "id": "attention_grabbing", "label": "Attention-grabbing" }
+        ]
+      },
+      {
+        "id": "emotional_style",
+        "title": "Emotional Style",
+        "description_self": "How you deal with feelings and moods. Pick up to 2 words that feel most like you.",
+        "description_rater": "How they deal with feelings and moods. Pick up to 2 words that feel most like them.",
+        "max_choices": 2,
+        "options": [
+          { "id": "chill", "label": "Chill" },
+          { "id": "steady", "label": "Steady" },
+          { "id": "serious", "label": "Serious" },
+          { "id": "light_hearted", "label": "Light-hearted" },
+          { "id": "sensitive", "label": "Sensitive" },
+          { "id": "anxious", "label": "Anxious" },
+          { "id": "dramatic", "label": "Dramatic" },
+          { "id": "moody", "label": "Moody" }
+        ]
+      },
+      {
+        "id": "structure_followthrough",
+        "title": "Structure & Follow-through",
+        "description_self": "How together you are. Pick up to 2 words that feel most like you.",
+        "description_rater": "How together they seem. Pick up to 2 words that feel most like them.",
+        "max_choices": 2,
+        "options": [
+          { "id": "organized", "label": "Organized" },
+          { "id": "responsible", "label": "Responsible" },
+          { "id": "on_top_of_things", "label": "On top of things" },
+          { "id": "disorganized", "label": "Disorganized" },
+          { "id": "last_minute", "label": "Last-minute" },
+          { "id": "forgetful", "label": "Forgetful" },
+          { "id": "reliable", "label": "Reliable" },
+          { "id": "flaky", "label": "Flaky" }
+        ]
+      },
+      {
+        "id": "relational_style",
+        "title": "Relational Style",
+        "description_self": "How you tend to treat and connect with people. Pick up to 2 words that feel most like you.",
+        "description_rater": "How they tend to treat and connect with people. Pick up to 2 words that feel most like them.",
+        "max_choices": 2,
+        "options": [
+          { "id": "warm", "label": "Warm" },
+          { "id": "kind", "label": "Kind" },
+          { "id": "supportive", "label": "Supportive" },
+          { "id": "nurturing", "label": "Nurturing" },
+          { "id": "blunt", "label": "Blunt" },
+          { "id": "honest", "label": "Honest" },
+          { "id": "distant", "label": "Distant" },
+          { "id": "judgy", "label": "Judgy" }
+        ]
+      }
+    ],
+    "axes": [
+      {
+        "id": "social_energy",
+        "name": "Social Energy",
+        "description": "Quiet / low-key ↔ Outgoing / center-of-attention"
+      },
+      {
+        "id": "initiative",
+        "name": "Initiative",
+        "description": "Goes with the flow ↔ Drives plans / takes charge"
+      },
+      {
+        "id": "emotional_intensity",
+        "name": "Emotional Intensity",
+        "description": "Laid-back ↔ Intense / high-strung"
+      },
+      {
+        "id": "playfulness",
+        "name": "Playfulness",
+        "description": "Serious / earnest ↔ Playful / joking"
+      },
+      {
+        "id": "structure",
+        "name": "Structure",
+        "description": "Disorganized / last-minute ↔ Organized / on-top-of-things"
+      },
+      {
+        "id": "edge",
+        "name": "Edge",
+        "description": "Gentle / diplomatic ↔ Blunt / sharp"
+      },
+      {
+        "id": "openness_self",
+        "name": "Openness with Self",
+        "description": "Guarded / private ↔ Open / emotionally transparent"
+      },
+      {
+        "id": "focus_on_others",
+        "name": "Focus on Others",
+        "description": "Mostly self-focused ↔ Shows up a lot for others"
+      }
+    ],
+    "items": [
+      {
+        "id": "SE1",
+        "axis_id": "social_energy",
+        "self_text": "In groups, I'm one of the people talking the most.",
+        "rater_text": "In groups, they're one of the people talking the most.",
+        "reverse_scored": false
+      },
+      {
+        "id": "SE2",
+        "axis_id": "social_energy",
+        "self_text": "I like meeting new people and getting to know them.",
+        "rater_text": "They seem to like meeting new people and getting to know them.",
+        "reverse_scored": false
+      },
+      {
+        "id": "SE3",
+        "axis_id": "social_energy",
+        "self_text": "I get energized more by being around people than by being alone.",
+        "rater_text": "They seem energized more by being around people than by being alone.",
+        "reverse_scored": false
+      },
+      {
+        "id": "IN1",
+        "axis_id": "initiative",
+        "self_text": "I'm usually the one suggesting plans instead of waiting to be invited.",
+        "rater_text": "They're usually the one suggesting plans instead of waiting to be invited.",
+        "reverse_scored": false
+      },
+      {
+        "id": "IN2",
+        "axis_id": "initiative",
+        "self_text": "When a group is stuck deciding what to do, I often step in and decide.",
+        "rater_text": "When a group is stuck deciding what to do, they often step in and decide.",
+        "reverse_scored": false
+      },
+      {
+        "id": "IN3",
+        "axis_id": "initiative",
+        "self_text": "If something feels off, I'm the one who brings it up instead of hoping it fixes itself.",
+        "rater_text": "If something feels off, they're the one who brings it up instead of hoping it fixes itself.",
+        "reverse_scored": false
+      },
+      {
+        "id": "EI1",
+        "axis_id": "emotional_intensity",
+        "self_text": "People would describe me as intense.",
+        "rater_text": "People would describe them as intense.",
+        "reverse_scored": false
+      },
+      {
+        "id": "EI2",
+        "axis_id": "emotional_intensity",
+        "self_text": "When something bothers me, my reactions are pretty strong.",
+        "rater_text": "When something bothers them, their reactions are pretty strong.",
+        "reverse_scored": false
+      },
+      {
+        "id": "EI3",
+        "axis_id": "emotional_intensity",
+        "self_text": "I worry or overthink things more than most people I know.",
+        "rater_text": "They worry or overthink things more than most people around them.",
+        "reverse_scored": false
+      },
+      {
+        "id": "PL1",
+        "axis_id": "playfulness",
+        "self_text": "I joke around a lot, even about serious things (when it seems okay).",
+        "rater_text": "They joke around a lot, even about serious things (when it seems okay).",
+        "reverse_scored": false
+      },
+      {
+        "id": "PL2",
+        "axis_id": "playfulness",
+        "self_text": "Most of the time, I come across as more playful than serious.",
+        "rater_text": "Most of the time, they come across as more playful than serious.",
+        "reverse_scored": false
+      },
+      {
+        "id": "PL3",
+        "axis_id": "playfulness",
+        "self_text": "People come to me more for fun and laughter than for heavy, serious talks.",
+        "rater_text": "People go to them more for fun and laughter than for heavy, serious talks.",
+        "reverse_scored": false
+      },
+      {
+        "id": "ST1",
+        "axis_id": "structure",
+        "self_text": "I keep track of plans, dates, and details pretty well.",
+        "rater_text": "They keep track of plans, dates, and details pretty well.",
+        "reverse_scored": false
+      },
+      {
+        "id": "ST2",
+        "axis_id": "structure",
+        "self_text": "I often leave important things to the last minute.",
+        "rater_text": "They often leave important things to the last minute.",
+        "reverse_scored": true
+      },
+      {
+        "id": "ST3",
+        "axis_id": "structure",
+        "self_text": "When I promise to do something, I almost always follow through.",
+        "rater_text": "When they promise to do something, they almost always follow through.",
+        "reverse_scored": false
+      },
+      {
+        "id": "ED1",
+        "axis_id": "edge",
+        "self_text": "I'm more blunt than careful with my words.",
+        "rater_text": "They're more blunt than careful with their words.",
+        "reverse_scored": false
+      },
+      {
+        "id": "ED2",
+        "axis_id": "edge",
+        "self_text": "People have told me I can come off a bit harsh, even if I don't mean to.",
+        "rater_text": "People have told them they can come off a bit harsh, even if they don't mean to.",
+        "reverse_scored": false
+      },
+      {
+        "id": "ED3",
+        "axis_id": "edge",
+        "self_text": "I usually soften what I say to avoid hurting people's feelings.",
+        "rater_text": "They usually soften what they say to avoid hurting people's feelings.",
+        "reverse_scored": true
+      },
+      {
+        "id": "OP1",
+        "axis_id": "openness_self",
+        "self_text": "I talk openly about what's really going on with me.",
+        "rater_text": "They talk openly about what's really going on with them.",
+        "reverse_scored": false
+      },
+      {
+        "id": "OP2",
+        "axis_id": "openness_self",
+        "self_text": "Most people don't actually know what I'm struggling with.",
+        "rater_text": "Most people don't actually know what they're struggling with.",
+        "reverse_scored": true
+      },
+      {
+        "id": "OP3",
+        "axis_id": "openness_self",
+        "self_text": "I let people see me when I'm not okay, not just when I look fine.",
+        "rater_text": "They let people see them when they're not okay, not just when they look fine.",
+        "reverse_scored": false
+      },
+      {
+        "id": "FO1",
+        "axis_id": "focus_on_others",
+        "self_text": "I notice what's going on in other people's lives and follow up about it.",
+        "rater_text": "They notice what's going on in other people's lives and follow up about it.",
+        "reverse_scored": false
+      },
+      {
+        "id": "FO2",
+        "axis_id": "focus_on_others",
+        "self_text": "If someone close to me needs support, I show up, even if it's inconvenient.",
+        "rater_text": "If someone close to them needs support, they show up, even if it's inconvenient.",
+        "reverse_scored": false
+      },
+      {
+        "id": "FO3",
+        "axis_id": "focus_on_others",
+        "self_text": "When I'm with people, my attention is mostly on them, not on my phone or my own thoughts.",
+        "rater_text": "When they're with people, their attention is mostly on others, not on their phone or their own thoughts.",
+        "reverse_scored": false
+      }
+    ],
+    "roles": {
+      "self": {
+        "id": "self",
+        "label": "Self Version",
+        "instructions": "You're going to answer a short quiz about how you see yourself. First, you'll pick a few words that describe you in different areas. Then you'll rate some statements about your typical behavior."
+      },
+      "rater": {
+        "id": "rater",
+        "label": "Rater Version",
+        "instructions": "You're about to answer a short quiz about this person. Answer based on how they usually are, not which version of them you like best, and not how you think they want to be seen. Your answers are anonymous and will be combined with other people's answers."
+      }
+    }
+  }
+}

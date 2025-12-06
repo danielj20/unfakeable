@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Perception Gap</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/results.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="/">The Unfakeable Personality Test</a>
+      </div>
+    </header>
+
+    <main class="container" id="results-app">
+      <section id="waiting-state" class="card hidden">
+        <p class="eyebrow">Gathering the truth</p>
+        <h1>Waiting on more responses</h1>
+        <p id="waiting-copy"></p>
+        <div class="progress">
+          <div id="waiting-progress"></div>
+        </div>
+        <div class="share-row">
+          <a class="btn secondary" id="share-again" href="#">Share invite link</a>
+          <a class="btn ghost" id="refresh-progress" href="#">Refresh</a>
+        </div>
+      </section>
+
+      <section id="results-state" class="hidden">
+        <header class="results-hero">
+          <div>
+            <p class="eyebrow">The Unfakeable Personality Test</p>
+            <h1 id="results-heading">How you see yourself vs how they brag about you</h1>
+            <p class="muted" id="results-meta"></p>
+          </div>
+          <div class="mini-stats">
+            <div>
+              <p class="eyebrow">Truth tellers</p>
+              <strong id="results-rater-count">0</strong>
+              <span>voices</span>
+            </div>
+            <div>
+              <p class="eyebrow">Unlocked at</p>
+              <strong id="results-threshold">3</strong>
+              <span>responses</span>
+            </div>
+          </div>
+        </header>
+
+        <div id="story-intro" class="story-intro">
+          <p>Ready for your revelations?</p>
+          <button class="btn primary" id="start-reveal">Show me the truth</button>
+        </div>
+
+        <section id="story-experience" class="story-experience hidden">
+          <div class="story-card" id="story-card">
+            <p class="eyebrow" id="story-eyebrow"></p>
+            <h3 id="story-title"></h3>
+            <p id="story-body"></p>
+            <p class="muted" id="story-meta"></p>
+          </div>
+          <div class="story-controls">
+            <button class="btn ghost" id="story-prev" disabled>&larr; Back</button>
+            <div id="story-progress" class="story-progress"></div>
+            <button class="btn secondary" id="story-next">Next &rarr;</button>
+          </div>
+          <div class="story-save">
+            <button class="btn primary hidden" id="story-save">Save these results</button>
+            <p id="story-save-status" class="muted"></p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> The Unfakeable Personality Test.</small>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/results.js" defer></script>
+  </body>
+</html>
