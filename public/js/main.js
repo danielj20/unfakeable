@@ -54,7 +54,7 @@
       if (!trigger) return;
 
       event.preventDefault();
-      const subjectId = window.prompt('Enter the code or name from your friend’s invite:');
+      const subjectId = window.prompt('Enter the code from your friend’s invite:');
       if (subjectId) {
         window.location.href = `/quiz/rater/${subjectId.trim()}`;
       }
