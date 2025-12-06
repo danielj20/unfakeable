@@ -242,8 +242,8 @@
       {
         "id": "ED2",
         "axis_id": "edge",
-        "self_text": "People have told me I can come off a bit harsh, even if I don't mean to.",
-        "rater_text": "People have told them they can come off a bit harsh, even if they don't mean to.",
+        "self_text": "I can come off a bit harsh, even if I don't mean to.",
+        "rater_text": "They can come off a bit harsh, even if they don't mean to.",
         "reverse_scored": false
       },
       {
