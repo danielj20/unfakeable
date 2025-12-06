@@ -1,5 +1,5 @@
 (function () {
-  const STORAGE_KEY = 'unfakeableSubject';
+  const STORAGE_KEY = 'unfakeableSubject_v2';
 
   const getSubjectIdFromPath = () => {
     const parts = window.location.pathname.split('/').filter(Boolean);

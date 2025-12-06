@@ -10,6 +10,7 @@
   const progressHint = document.getElementById('progress-hint');
   const resultsBtn = document.getElementById('results-btn');
   const inviteCodeEl = document.getElementById('invite-code');
+  let subjectName = '';
 
   if (!subjectId) return;
 
@@ -21,6 +22,9 @@
       }
 
       const data = await response.json();
+      subjectName = data.subjectName || '';
+      const titleName = subjectName || 'this';
+      document.title = `Fill out ${titleName}'s Form | UPT`;
       progressCount.textContent = data.currentRatersCount;
       progressTarget.textContent = data.targetRaters;
       progressHint.textContent = `You need at least ${data.minRaters} responses to unlock your results.`;
@@ -60,8 +64,8 @@
 
     try {
       await navigator.share({
-        title: 'Rate me on The Unfakeable Personality Test',
-        text: 'How do you see me? Answer these quick prompts.',
+        title: subjectName ? `Fill out ${subjectName}'s Form | UPT` : 'Fill out this form | UPT',
+        text: 'Tell the truth—how do they really show up?',
         url: inviteInput.value,
       });
     } catch (error) {

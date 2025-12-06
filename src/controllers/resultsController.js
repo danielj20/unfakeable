@@ -129,8 +129,7 @@ const generateStoryCards = async (req, res, next) => {
     const prompt = buildPrompt(results);
 
     const response = await openai.responses.create({
-      model: 'gpt-4o-mini',
-      temperature: 0.85,
+      model: 'gpt-5.1',
       input: prompt,
     });
 

@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const QUIZ_CONFIG_PATH = path.join(__dirname, '../../quiz.json');
-const MIN_RATERS = 5;
-const TARGET_RATERS = 5;
+const MIN_RATERS = 1;
+const TARGET_RATERS = 1;
 
 let cachedQuizConfig = null;
 

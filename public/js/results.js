@@ -18,6 +18,8 @@
   ];
 
   const el = {
+    loading: document.getElementById('results-loading'),
+    loadingText: document.getElementById('results-loading-text'),
     waitingState: document.getElementById('waiting-state'),
     waitingCopy: document.getElementById('waiting-copy'),
     waitingProgress: document.getElementById('waiting-progress'),
@@ -74,10 +76,19 @@
     }
   };
 
+  const setLoadingScreen = (visible, message) => {
+    if (!el.loading) return;
+    el.loading.classList.toggle('hidden', !visible);
+    if (message && el.loadingText) {
+      el.loadingText.textContent = message;
+    }
+  };
+
   const renderWaiting = (progress) => {
+    setLoadingScreen(false);
     el.waitingState.classList.remove('hidden');
     el.resultsState.classList.add('hidden');
-    el.waitingCopy.textContent = `You’ve got ${progress.currentRatersCount} of ${progress.targetRaters} storytellers. Need at least ${progress.minRaters} to unlock your Unfakeable results.`;
+    el.waitingCopy.textContent = `You’ve got ${progress.currentRatersCount} of ${progress.targetRaters} responders. Need at least ${progress.minRaters} to unlock your Unfakeable results.`;
     const pct = Math.min(1, progress.currentRatersCount / progress.targetRaters) * 100;
     el.waitingProgress.style.width = `${pct}%`;
     if (el.shareBtn) {
@@ -86,6 +97,7 @@
   };
 
   const renderResultsShell = (results) => {
+    setLoadingScreen(false);
     el.waitingState.classList.add('hidden');
     el.resultsState.classList.remove('hidden');
     el.resultsHeading.textContent = `${results.subject.name}, here’s your Unfakeable readout.`;
@@ -182,6 +194,7 @@
 
   const refresh = async () => {
     try {
+      setLoadingScreen(true, 'Finding your insights…');
       const progress = await fetchProgress();
       if (progress.currentRatersCount >= progress.minRaters) {
         const results = await fetchResults();
@@ -191,6 +204,7 @@
       }
     } catch (error) {
       window.Unfakeable.setStatus(el.resultsMeta, error.message, 'error');
+      setLoadingScreen(false);
     }
   };
 

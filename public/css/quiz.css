@@ -19,6 +19,42 @@
   flex-wrap: wrap;
 }
 
+.chip {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+  will-change: transform;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+}
+
+.chip input {
+  accent-color: var(--brand);
+}
+
+.chip span {
+  transition: color 0.2s ease;
+}
+
+.chip.is-selected,
+.chip.is-selected span {
+  color: var(--brand-dark);
+}
+
+.chip.is-selected {
+  border-color: var(--brand);
+  background: rgba(76, 82, 255, 0.15);
+  box-shadow: 0 6px 16px rgba(76, 82, 255, 0.25);
+  animation: pulseSelect 0.25s ease;
+}
+
 .axis-section__header h3 {
   margin: 0;
 }
@@ -41,19 +77,52 @@
 
 .likert-scale label {
   border: 1px solid var(--border);
-  border-radius: 0.75rem;
+  border-radius: 0.9rem;
   padding: 0.5rem;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.likert-scale label:hover {
+  transform: translateY(-1px);
 }
 
 .likert-scale input {
   accent-color: var(--brand);
 }
 
+.likert-scale label span {
+  transition: color 0.2s ease;
+}
+
+.likert-scale label.is-selected,
+.likert-scale label.is-selected span {
+  color: var(--brand-dark);
+}
+
+.likert-scale label.is-selected {
+  border-color: var(--brand);
+  background: rgba(76, 82, 255, 0.15);
+  box-shadow: 0 6px 16px rgba(76, 82, 255, 0.25);
+  animation: pulseSelect 0.25s ease;
+}
+
 .success-panel {
   text-align: center;
   margin-top: 2rem;
+}
+
+@keyframes pulseSelect {
+  from {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

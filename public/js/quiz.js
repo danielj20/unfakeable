@@ -61,9 +61,21 @@
 
     const data = await response.json();
     state.subjectName = data.subjectName;
+    updateDocumentTitle();
+  };
+
+  const updateDocumentTitle = () => {
+    if (state.mode === 'rater') {
+      document.title = state.subjectName
+        ? `Fill out my Unfakeable Personality Test | ${state.subjectName}`
+        : 'Fill out my Unfakeable Personality Test';
+    } else {
+      document.title = 'Take The Unfakeable Personality Test';
+    }
   };
 
   const renderQuiz = () => {
+    updateDocumentTitle();
     selectors.mode.textContent = state.mode === 'self' ? 'Subject mode' : 'Rater mode';
     selectors.heading.textContent =
       state.mode === 'self'
@@ -103,7 +115,6 @@
         const label = document.createElement('label');
         label.className = 'chip';
         label.htmlFor = optionId;
-        label.textContent = option.label;
 
         const input = document.createElement('input');
         input.type = 'checkbox';
@@ -113,7 +124,11 @@
         input.dataset.wordMapId = wordMap.id;
         input.addEventListener('change', () => handleWordMapSelection(wordMap, optionId));
 
-        label.prepend(input);
+        const text = document.createElement('span');
+        text.textContent = option.label;
+
+        label.appendChild(input);
+        label.appendChild(text);
         optionsHost.appendChild(label);
       });
 
@@ -136,6 +151,13 @@
     } else {
       window.Unfakeable.setStatus(selectors.message, '');
     }
+
+    inputs.forEach((input) => {
+      const label = input.closest('label');
+      if (label) {
+        label.classList.toggle('is-selected', input.checked);
+      }
+    });
   };
 
   const renderAxisSections = () => {
@@ -172,7 +194,6 @@
       const inputId = `${questionId}-${value}`;
       const label = document.createElement('label');
       label.htmlFor = inputId;
-      label.textContent = state.quiz.scale.labels[index];
 
       const input = document.createElement('input');
       input.type = 'radio';
@@ -180,8 +201,23 @@
       input.value = value;
       input.id = inputId;
 
-      label.prepend(input);
+        const span = document.createElement('span');
+        span.textContent = state.quiz.scale.labels[index];
+
+      label.appendChild(input);
+      label.appendChild(span);
+      label.appendChild(input);
+      label.appendChild(span);
       scale.appendChild(label);
+
+      input.addEventListener('change', () => {
+        document.querySelectorAll(`input[name="${questionId}"]`).forEach((radio) => {
+          const radioLabel = radio.closest('label');
+          if (radioLabel) {
+            radioLabel.classList.toggle('is-selected', radio.checked);
+          }
+        });
+      });
     });
 
     wrapper.appendChild(scale);
